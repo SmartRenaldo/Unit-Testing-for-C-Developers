@@ -21,6 +21,7 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
+        [Ignore("Show how to ignore")]
         public void Add_WhenCalled_ReturnTheSumOfArguments()
         {
             var res = _math.Add(1, 2);
