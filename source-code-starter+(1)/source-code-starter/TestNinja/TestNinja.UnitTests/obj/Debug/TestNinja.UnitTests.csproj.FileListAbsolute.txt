@@ -29,3 +29,11 @@ C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-s
 C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\Mono.Cecil.Rocks.dll
 C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\nunit.framework.dll
 C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\nunit.framework.xml
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\Castle.Core.dll
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\Moq.dll
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\Castle.Core.xml
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\Moq.xml
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projects\Unit Testing for C# Developers\source-code-starter+(1)\source-code-starter\TestNinja\TestNinja.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.xml
