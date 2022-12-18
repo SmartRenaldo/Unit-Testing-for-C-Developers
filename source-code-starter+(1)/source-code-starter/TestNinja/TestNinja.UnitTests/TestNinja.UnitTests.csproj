@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingHelper_OverlappingBookingsExistTests.cs" />
     <Compile Include="CustomerControllerTests.cs" />
     <Compile Include="DemeritPointsCalculatorTests.cs" />
     <Compile Include="EmployeeControllerTests.cs" />
