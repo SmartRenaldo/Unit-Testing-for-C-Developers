@@ -57,18 +57,96 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        [TestCase(null)]
-        [TestCase("")]
-        [TestCase(" ")]
-        public void SendStatementEmails_HouseKeepersEmailIsNullOrWhitespace_ShouldNotGenerateStatement(string email)
+        public void SendStatementEmails_HouseKeepersEmailIsNull_ShouldNotGenerateStatement()
         {
-            _houseKeeper.Email = email;
+            _houseKeeper.Email = null;
 
             _service.SendStatementEmails(_statementDate);
 
             _statementGenerator.Verify(sg =>
                 sg.SaveStatement(_houseKeeper.Oid, _houseKeeper.FullName, (_statementDate)),
                 Times.Never);
+        }
+
+        [Test]
+        public void SendStatementEmails_HouseKeepersEmailIsWhitespace_ShouldNotGenerateStatement()
+        {
+            _houseKeeper.Email = " ";
+
+            _service.SendStatementEmails(_statementDate);
+
+            _statementGenerator.Verify(sg =>
+                sg.SaveStatement(_houseKeeper.Oid, _houseKeeper.FullName, (_statementDate)),
+                Times.Never);
+        }
+
+        [Test]
+        public void SendStatementEmails_HouseKeepersEmailIsEmpty_ShouldNotGenerateStatement()
+        {
+            _houseKeeper.Email = "";
+
+            _service.SendStatementEmails(_statementDate);
+
+            _statementGenerator.Verify(sg =>
+                sg.SaveStatement(_houseKeeper.Oid, _houseKeeper.FullName, (_statementDate)),
+                Times.Never);
+        }
+
+        [Test]
+        public void SendStatementEmails_WhenCalled_EmailTheStatement()
+        {
+            _service.SendStatementEmails(_statementDate);
+
+            VerifyEmailSent();
+        }
+
+        [Test]
+        public void SendStatementEmails_StatementFileNameIsNull_ShouldNotEmailTheStatement()
+        {
+            _statementFileName = null;
+
+            _service.SendStatementEmails(_statementDate);
+
+            VerifyEmailNotSent();
+        }
+
+        [Test]
+        public void SendStatementEmails_StatementFileNameIsEmptyString_ShouldNotEmailTheStatement()
+        {
+            _statementFileName = "";
+
+            _service.SendStatementEmails(_statementDate);
+
+            VerifyEmailNotSent();
+        }
+
+        [Test]
+        public void SendStatementEmails_StatementFileNameIsWhitespace_ShouldNotEmailTheStatement()
+        {
+            _statementFileName = " ";
+
+            _service.SendStatementEmails(_statementDate);
+
+            VerifyEmailNotSent();
+        }
+
+        private void VerifyEmailNotSent()
+        {
+            _emailSender.Verify(es => es.EmailFile(
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>()),
+                Times.Never);
+        }
+
+        private void VerifyEmailSent()
+        {
+            _emailSender.Verify(es => es.EmailFile(
+                _houseKeeper.Email,
+                _houseKeeper.StatementEmailBody,
+                _statementFileName,
+                It.IsAny<string>()));
         }
     }
 }
